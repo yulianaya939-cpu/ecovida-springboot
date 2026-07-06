@@ -8,6 +8,12 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+/*
+ * Permite que React (localhost:5173)
+ * pueda consumir esta API.
+ */
+@CrossOrigin(origins = "http://localhost:5173")
+
 @RestController
 @RequestMapping("/clientes")
 public class ClienteController {

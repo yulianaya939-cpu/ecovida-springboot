@@ -21,6 +21,15 @@ public class Residuo {
 
     private String descripcion;
 
+    /*
+     Relación Muchos a Uno.
+     Muchos residuos pueden pertenecer
+     a un mismo cliente.
+    */
+    @ManyToOne
+    @JoinColumn(name = "cliente_id", nullable = false)
+    private Cliente cliente;
+
     public Residuo() {
     }
 
@@ -71,4 +80,20 @@ public class Residuo {
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
+
+    /*
+     Obtiene el cliente asociado
+     al residuo.
+    */
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    /*
+     Asigna un cliente al residuo.
+    */
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
+
 }
