@@ -3,6 +3,8 @@ package com.ecovidasas.controller;
 import com.ecovidasas.entity.Residuo;
 import com.ecovidasas.service.ResiduoService;
 
+import jakarta.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -28,14 +30,14 @@ public class ResiduoController {
     }
 
     @PostMapping
-    public Residuo guardarResiduo(@RequestBody Residuo residuo) {
+    public Residuo guardarResiduo(@Valid @RequestBody Residuo residuo) {
         return residuoService.guardarResiduo(residuo);
     }
 
     @PutMapping("/{id}")
     public Residuo actualizarResiduo(
             @PathVariable Long id,
-            @RequestBody Residuo residuo) {
+            @Valid @RequestBody Residuo residuo) {
 
         residuo.setId(id);
 

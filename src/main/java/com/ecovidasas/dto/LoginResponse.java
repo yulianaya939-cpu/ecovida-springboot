@@ -9,14 +9,21 @@ public class LoginResponse {
     private String mensaje;
     private Boolean autenticado;
     private String token;
+    private String rol;
 
     public LoginResponse() {
     }
 
-    public LoginResponse(String mensaje, Boolean autenticado, String token) {
+    public LoginResponse(
+            String mensaje,
+            Boolean autenticado,
+            String token,
+            String rol) {
+
         this.mensaje = mensaje;
         this.autenticado = autenticado;
         this.token = token;
+        this.rol = rol;
     }
 
     public String getMensaje() {
@@ -43,4 +50,11 @@ public class LoginResponse {
         this.token = token;
     }
 
+    public String getRol() {
+        return rol;
+    }
+
+    public void setRol(String rol) {
+        this.rol = rol;
+    }
 }

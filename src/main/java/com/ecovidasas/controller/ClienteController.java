@@ -3,6 +3,8 @@ package com.ecovidasas.controller;
 import com.ecovidasas.entity.Cliente;
 import com.ecovidasas.service.ClienteService;
 
+import jakarta.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -35,14 +37,14 @@ public class ClienteController {
 
     // CREAR CLIENTE
     @PostMapping
-    public Cliente guardarCliente(@RequestBody Cliente cliente) {
+    public Cliente guardarCliente(@Valid @RequestBody Cliente cliente) {
         return clienteService.guardarCliente(cliente);
     }
 
     // ACTUALIZAR CLIENTE
     @PutMapping("/{id}")
     public Cliente actualizarCliente(@PathVariable Long id,
-                                     @RequestBody Cliente cliente) {
+                                     @Valid @RequestBody Cliente cliente) {
 
         cliente.setId(id);
 

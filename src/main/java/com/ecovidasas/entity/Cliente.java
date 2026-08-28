@@ -1,6 +1,8 @@
 package com.ecovidasas.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
 
 @Entity
 @Table(name = "cliente")
@@ -10,20 +12,25 @@ public class Cliente {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotBlank(message = "Los nombres son obligatorios")
     @Column(nullable = false)
     private String nombres;
 
+    @NotBlank(message = "Los apellidos son obligatorios")
     @Column(nullable = false)
     private String apellidos;
 
+    @NotBlank(message = "El tipo de documento es obligatorio")
     @Column(name = "tipo_documento", nullable = false)
     private String tipoDocumento;
 
+    @NotBlank(message = "El número de documento es obligatorio")
     @Column(name = "numero_documento", nullable = false, unique = true)
     private String numeroDocumento;
 
     private String telefono;
 
+    @Email(message = "El correo electrónico no tiene un formato válido")
     @Column(name = "correo_electronico")
     private String correoElectronico;
 
