@@ -31,3 +31,6 @@ build/
 
 ### VS Code ###
 .vscode/
+
+# Archivo generado automáticamente por Windows
+desktop.ini
