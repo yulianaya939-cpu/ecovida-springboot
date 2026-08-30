@@ -5,7 +5,6 @@ import com.ecovidasas.service.UsuarioService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -41,11 +40,9 @@ public class UsuarioController {
 
     // =========================
     // CREAR USUARIO
-    // SOLO ADMINISTRADOR
     // =========================
 
     @PostMapping
-    @PreAuthorize("hasRole('Administrador')")
     public Usuario guardarUsuario(
             @RequestBody Usuario usuario) {
 
@@ -55,11 +52,9 @@ public class UsuarioController {
 
     // =========================
     // ACTUALIZAR USUARIO
-    // SOLO ADMINISTRADOR
     // =========================
 
     @PutMapping("/{id}")
-    @PreAuthorize("hasRole('Administrador')")
     public Usuario actualizarUsuario(
             @PathVariable Long id,
             @RequestBody Usuario usuario) {
@@ -72,11 +67,9 @@ public class UsuarioController {
 
     // =========================
     // ELIMINAR USUARIO
-    // SOLO ADMINISTRADOR
     // =========================
 
     @DeleteMapping("/{id}")
-    @PreAuthorize("hasRole('Administrador')")
     public ResponseEntity<Void> eliminarUsuario(
             @PathVariable Long id) {
 
