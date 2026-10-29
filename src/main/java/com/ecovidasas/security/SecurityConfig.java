@@ -96,11 +96,10 @@ public class SecurityConfig {
          */
         configuration.setAllowedOrigins(
                 Arrays.asList(
-                        "http://localhost:5173"
+                        "http://localhost:5173",
+                        "https://ecovida-react.vercel.app"
                 )
         );
-
-
         /*
          * Métodos HTTP utilizados
          * por la aplicación Eco Vida.
