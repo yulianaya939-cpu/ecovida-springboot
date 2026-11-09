@@ -91,13 +91,17 @@ public class SecurityConfig {
                 new CorsConfiguration();
 
 
-        /*
-         * Origen permitido.
+                /*      
+         * Orígenes permitidos:
+         * - React local.
+         * - Frontend original en Vercel.
+         * - Nueva publicación en Netlify.
          */
         configuration.setAllowedOrigins(
                 Arrays.asList(
                         "http://localhost:5173",
-                        "https://ecovida-react.vercel.app"
+                        "https://ecovida-react.vercel.app",
+                        "https://spectacular-longma-ad25ba.netlify.app"
                 )
         );
         /*
